@@ -1,3 +1,5 @@
+
+
 const config = require('../config/config.json');
 
 const normalize = (value, cap) => (value / cap) * 100;
@@ -44,7 +46,7 @@ exports.calculateAllocation = (siteKitty, salesAgents) => {
 
   const totalScore = agentScores.reduce((sum, agent) => sum + agent.score, 0);
 
-  // Handle the all-same scores case or zero total score
+  
   if (totalScore === 0) {
     const equalAllocation = siteKitty / salesAgents.length;
     let allocations = salesAgents.map((agent, index) => ({

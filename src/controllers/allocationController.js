@@ -1,5 +1,6 @@
 const { calculateAllocation } = require('../services/allocationService');
 
+
 exports.postAllocation = (req, res) => {
   try {
     const { siteKitty, salesAgents } = req.body;
@@ -12,7 +13,7 @@ exports.postAllocation = (req, res) => {
       averageAllocation: siteKitty / salesAgents.length
     };
     
-    // Ensure remainingKitty is not a tiny negative value due to floating point math
+   
     if (Math.abs(summary.remainingKitty) < 0.01) {
         summary.remainingKitty = 0;
     }

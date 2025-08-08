@@ -15,11 +15,12 @@ describe('Smart Discount Allocation Engine Unit Tests', () => {
         };
         const result = calculateAllocation(input.siteKitty, input.salesAgents);
         
-        // Assertions for a few key agents to ensure proportional distribution
+        
         const a3Allocation = result.allocations.find(a => a.id === "A3").assignedDiscount;
         const a4Allocation = result.allocations.find(a => a.id === "A4").assignedDiscount;
         
-        // Agent A3 has the highest scores across the board, so should get the most
+
+        
         expect(a3Allocation).toBeGreaterThan(a4Allocation);
         
         // Agent A4 has the lowest scores, so should get the least (or near-least)
